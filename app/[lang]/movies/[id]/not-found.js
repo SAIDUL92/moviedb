@@ -1,11 +1,10 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-export default function NotFound() {
+export default function MovieIdNotFound(id) {
   return (
     <div>
-      <h2>Not Found</h2>
-      <p>Could not find requested resource</p>
+      <h2>{`This movie with ${id} id was not found!!!!`}</h2>
       <Link href="/">Return Home</Link>
     </div>
-  );
+  )
 }

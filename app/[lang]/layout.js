@@ -11,35 +11,30 @@ export const metadata = {
   description: "Cine Rental | Learn with Sumit",
 };
 
-export default function RootLayout({ children, movies }) {
+export default function MovieLayout({ children, modal }) {
   return (
-    <html className="dark" lang="en">
-      <body
-        className={`dark:bg-black bg-white font-[Sora] dark:text-white text-dark ${sora.className}`}
-      >
-        {/* Begin header */}
-        <Header />
-        {/* End Header */}
+    <>
+      {/* Begin header */}
+      <Header />
+      {/* End Header */}
 
-        {/* Begin Main */}
+      {/* Begin Main */}
+      {modal}
 
-        {movies}
-        <main>
-          <div className="container grid lg:grid-cols-[218px_1fr] gap-[3.5rem]">
-            {/* Sidebar */}
-            <SideBar />
+      <main>
+        <div className="container grid lg:grid-cols-[218px_1fr] gap-[3.5rem]">
+          {/* Sidebar */}
+          <SideBar />
 
-            {/* Content */}
+          {/* Content */}
+          {children}
+        </div>
+      </main>
 
-            {children}
-          </div>
-        </main>
+      {/* End Main */}
 
-        {/* End Main */}
-
-        {/* Footer */}
-        <Footer />
-      </body>
-    </html>
+      {/* Footer */}
+      <Footer />
+    </>
   );
 }
