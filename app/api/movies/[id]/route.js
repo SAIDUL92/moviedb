@@ -8,11 +8,6 @@ const movies = await getAllMovies();
 export async function GET(_request, { params }) {
 
     const movieId = params?.id;
-
-    if (parseInt(movieId) > movies.results.length) {
-        redirect('/api/movies')
-
-    }
     const data = await getMovieById(movieId);
     return NextResponse.json(data)
 

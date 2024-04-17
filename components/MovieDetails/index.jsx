@@ -1,7 +1,9 @@
+import { getDictionary } from "@/app/[lang]/dictionaries";
 import { getAllMovies } from "@/utils";
 import Image from "next/image";
 
-async function MovieDetails({ id }) {
+async function MovieDetails({ id, lang }) {
+  const dictinary = await getDictionary(lang);
   const movies = await getAllMovies();
 
   const movie =
@@ -36,18 +38,18 @@ async function MovieDetails({ id }) {
           </h2>
           <p className="my-2 text-slate-400 italic">{movie?.overview}</p>
           <ul className="text-slate-300 space-y-2 my-8">
-            <li>Release Date : {movie?.release_date}</li>
-            <li>Average Vote : {movie?.vote_average}</li>
-            <li>Vote Count : {movie?.vote_count}</li>
-            <li>Popularity : {movie?.popularity}</li>
+            <li>{dictinary.releaseDate} : {movie?.release_date}</li>
+            <li>{dictinary.averageVote} : {movie?.vote_average}</li>
+            <li>{dictinary.voteCount} : {movie?.vote_count}</li>
+            <li>{dictinary.popularity} : {movie?.popularity}</li>
           </ul>
         </div>
         <div className="col-span-2 space-y-4">
           <button className="py-2 w-full bg-primary font-medium text-slate-800 rounded-md">
-            Stream In HD
+            {dictinary.streamInHD}
           </button>
           <button className="py-2 w-full bg-primary font-medium text-slate-800 rounded-md">
-            Download In HD
+            {dictinary.downloadInHd}
           </button>
         </div>
       </div>

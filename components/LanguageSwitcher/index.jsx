@@ -1,16 +1,27 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-
-import { useState } from "react";
+import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from "next/navigation";
 
 const LanguageSwitcher = () => {
+
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    setDarkMode(prevDarkMode => !prevDarkMode);
+  };
+
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkMode(prefersDarkMode);
+  }, []);
+
+
   const router = useRouter();
   const pathname = usePathname();
-
-  console.log(pathname);
 
   const languages = [
     {
@@ -26,7 +37,7 @@ const LanguageSwitcher = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(
     found ?? languages[0]
   );
-  console.log(found, "found", selectedLanguage);
+
   const [showManu, setShowManu] = useState(false);
 
   const handleLanguageChange = (lang) => {
@@ -40,7 +51,7 @@ const LanguageSwitcher = () => {
       language: lang === "en" ? "English" : "Bangla",
     });
     setShowManu(false);
-    router.push(`/${lang}`);
+    router.replace(`/${lang}`);
   };
 
   return (
@@ -65,7 +76,7 @@ const LanguageSwitcher = () => {
               <li
                 key={entry.code}
                 onClick={() => handleLanguageChange(entry.code)}
-                className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-gray-100"
+                className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-gray-100 text-[#575A6E]"
               >
                 <Image
                   className="max-w-8"

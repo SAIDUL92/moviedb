@@ -1,8 +1,15 @@
 {
-    "views": "ভিউস",
-    "share": "শেয়ার",
-    "uploadedOn": "আপলোড তারিখ",
-    "save": "সংরক্ষণ",
-    "followers": "অনুসারী",
-    "follow": "অনুসরণ করুন"
+    "releaseDate": "মুক্তির তারিখ",
+    "averageVote": "গড় ভোট",
+    "voteCount": "ভোট গণনা",
+    "popularity": "জনপ্রিয়তা",
+    "streamInHD": "HD এ স্ট্রিম করুন",
+    "downloadInHd": "HD এ ডাউনলোড করুন",
+    "trending": "চলমান",
+    "newReleases": "নতুন রিলিজ",
+    "ComingSoon": "শীঘ্রই আসছে",
+    "Favourites": "প্রিয়",
+    "WatchLater": "পরে দেখুন",
+    "Details": "বিস্তারিত",
+    "copyRight": "কপিরাইট ©2024 লার্ন উইথ সুমিত। সর্বস্বত্ব সংরক্ষিত।"
 }

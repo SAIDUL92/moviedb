@@ -1,7 +1,9 @@
+import { getDictionary } from "@/app/[lang]/dictionaries";
 import Image from "next/image";
 import Link from "next/link";
 
-function SideBar() {
+async function SideBar({ lang }) {
+    const dictinary = await getDictionary(lang);
     return (
         <aside>
             <ul className="space-y-2">
@@ -11,7 +13,7 @@ function SideBar() {
                         href="#"
                     >
                         <Image src="/assets/icons/trending.svg" width={24} height={24} alt="Image" />
-                        <span>Trending</span>
+                        <span>{dictinary.trending}</span>
                     </Link>
                 </li>
                 <li>
@@ -25,7 +27,7 @@ function SideBar() {
                             height={24}
                             alt="Image"
                         />
-                        <span>New Releases</span>
+                        <span>{dictinary.newReleases}</span>
                     </Link>
                 </li>
                 <li>
@@ -39,7 +41,7 @@ function SideBar() {
                             height={24}
                             alt="Image"
                         />
-                        <span>Coming Soon</span>
+                        <span>{dictinary.ComingSoon}</span>
                     </Link>
                 </li>
                 <li>
@@ -48,7 +50,7 @@ function SideBar() {
                         href="#"
                     >
                         <Image src="/assets/icons/favourite.svg" width={24} height={24} alt="Image" />
-                        <span>Favourites</span>
+                        <span>{dictinary.Favourites}</span>
                     </Link>
                 </li>
                 <li>
@@ -62,7 +64,7 @@ function SideBar() {
                             height={24}
                             alt="Image"
                         />
-                        <span>Watch Later</span>
+                        <span>{dictinary.WatchLater}</span>
                     </Link>
                 </li>
             </ul>

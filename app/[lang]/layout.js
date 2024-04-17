@@ -7,7 +7,7 @@ export const metadata = {
   description: "Cine Rental | Learn with Sumit",
 };
 
-export default function MovieLayout({ children, modal }) {
+export default function MovieLayout({ params: { lang }, children, modal }) {
   return (
     <>
       {/* Begin header */}
@@ -20,7 +20,7 @@ export default function MovieLayout({ children, modal }) {
       <main>
         <div className="container grid lg:grid-cols-[218px_1fr] gap-[3.5rem]">
           {/* Sidebar */}
-          <SideBar />
+          <SideBar lang={lang} />
           {/* Content */}
           {children}
         </div>
@@ -29,7 +29,7 @@ export default function MovieLayout({ children, modal }) {
       {/* End Main */}
 
       {/* Footer */}
-      <Footer />
+      <Footer lang={lang} />
     </>
   );
 }

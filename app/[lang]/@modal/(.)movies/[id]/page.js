@@ -3,6 +3,7 @@ import MovieDetails from "@/components/MovieDetails";
 import { getMovieIndex } from "@/utils";
 
 const MovieDetailsModalPage = async ({ params: { id, lang } }) => {
+
   const movieId = await getMovieIndex(id);
 
   if (movieId === -1) {

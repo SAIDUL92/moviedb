@@ -1,7 +1,7 @@
 import MovieCard from "@/components/MovieCard";
 import { getAllMovies } from "@/utils";
 
-export default async function HomePage() {
+export default async function HomePage({ params: { lang } }) {
   const movies = await getAllMovies();
 
   return (
@@ -11,7 +11,7 @@ export default async function HomePage() {
 
         {movies?.results.length > 0 &&
           movies?.results.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+            <MovieCard key={movie.id} movie={movie} lang={lang} />
           ))}
 
         {/* End Card */}

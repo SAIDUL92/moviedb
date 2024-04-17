@@ -1,8 +1,15 @@
 {
-    "views": "Views",
-    "share": "Share",
-    "uploadedOn": "Uploaded On",
-    "save": "Save",
-    "followers": "Followers",
-    "follow": "Follow"
+    "releaseDate": "Release Date",
+    "averageVote": "Average Vote",
+    "voteCount": "Vote Count",
+    "popularity": "Popularity",
+    "streamInHD": "Stream In HD",
+    "downloadInHd": "Download In HD",
+    "trending": "Trending",
+    "newReleases": "New Releases",
+    "ComingSoon": "Coming Soon",
+    "Favourites": "Favourites",
+    "WatchLater": "Watch Later",
+    "Details": "Details",
+    "copyRight": "Copyright ©2024 Learn with Sumit. All rights reserved."
 }

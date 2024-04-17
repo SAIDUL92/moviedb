@@ -1,8 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
-import Rating from "../Rating";
 
-function MovieCard({ movie }) {
+import Image from "next/image";
+import Rating from "../Rating";
+import { getDictionary } from "@/app/[lang]/dictionaries";
+import Link from "next/link";
+
+async function MovieCard({ movie, lang }) {
+  const dictinary = await getDictionary(lang);
   return (
     <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
       <Image
@@ -20,14 +23,16 @@ function MovieCard({ movie }) {
         </div>
         <Link
           className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
-          href={`/movies/${movie.id}`}
+          href={`/${lang}/movies/${movie.id}`
+          }
         >
           <Image src="/assets/tag.svg" width={19} height={19} alt="Image" />
-          <span>Details</span>
+          <span>{dictinary.Details}</span>
         </Link>
       </figcaption>
-    </figure>
+    </figure >
   );
 }
+
 
 export default MovieCard;
