@@ -1,14 +1,16 @@
 import MovieDetails from "@/components/MovieDetails";
-import { notFound } from "next/navigation";
+import { getMovieIndex } from "@/utils";
 
-const MovieDetailsPage = ({ params: { id, lang } }) => {
-    if (id > 4) {
-        notFound()
-    }
+const MovieDetailsPage = async ({ params: { id, lang } }) => {
+  const movieId = await getMovieIndex(id);
+
+  if (movieId === -1) {
     return (
-        <MovieDetails id={id} lang={lang} />
-    )
+      <p className="text-center p-5">This movie with {id} id was not ound!</p>
+    );
+  } else {
+    return <MovieDetails id={id} lang={lang} />;
+  }
+};
 
-}
-
-export default MovieDetailsPage
+export default MovieDetailsPage;

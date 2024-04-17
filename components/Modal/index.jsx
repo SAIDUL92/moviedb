@@ -22,7 +22,7 @@ function Modal({ children }) {
     <dialog
       ref={modalRef}
       onClose={onHideModal}
-      className="shadow-teal-700 shadow-md border border-teal-600 flex flex-col p-2 rounded-md dark:bg-black dark:bg-opacity-95 dark:text-gray-100 max-w-[90%]"
+      className="shadow-teal-700 shadow-md border border-teal-600 flex flex-col p-2 rounded-md dark:bg-black dark:bg-opacity-95 dark:text-gray-100 min-w-[60%] max-w-[90%]"
     >
       <span className="flex justify-end p-2">
         <span onClick={onHideModal} className="bg-white cursor-pointer p-1">
