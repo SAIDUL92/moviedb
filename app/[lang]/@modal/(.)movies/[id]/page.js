@@ -8,7 +8,9 @@ const MovieDetailsModalPage = async ({ params: { id, lang } }) => {
   if (movieId === -1) {
     return (
       <Modal>
-        <p className="text-center p-5">This movie with {id} id was not ound!</p>
+        <p className="text-center p-5">
+          This movie with {id} id was not found!
+        </p>
       </Modal>
     );
   } else {

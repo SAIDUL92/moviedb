@@ -6,7 +6,7 @@ const MovieDetailsPage = async ({ params: { id, lang } }) => {
 
   if (movieId === -1) {
     return (
-      <p className="text-center p-5">This movie with {id} id was not ound!</p>
+      <p className="text-center p-5">This movie with {id} id was not found!</p>
     );
   } else {
     return <MovieDetails id={id} lang={lang} />;
